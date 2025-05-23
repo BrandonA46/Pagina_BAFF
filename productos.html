@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos - BAF Express</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="img/logo-baf.png" alt="Logo BAF Express" class="logo" />
+      <h1>BAF Express</h1>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="productos.html"><i class="fas fa-box-open"></i> Productos</a>
+      <a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+      <a href="login.html" id="admin-link"><i class="fas fa-user-cog"></i> Login</a>
+    </nav>
+  </header>
+  <main>
+    <section class="filtros-productos">
+      <input type="text" id="buscador" placeholder="Buscar producto..." />
+      <select id="filtro-categoria">
+        <option value="todos">Todos</option>
+        <option value="frutas">Frutas</option>
+        <option value="cereales">Cereales</option>
+        <option value="lacteos">Lácteos</option>
+        <option value="carnes">Carnes</option>
+      </select>
+    </section>
+    <div id="productos-container"></div>
+  </main>
+  <footer>
+    <p>&copy; 2025 BAF Express. Todos los derechos reservados.</p>
+  </footer>
+  <script src="js/productos.js"></script>
+</body>
+</html>
