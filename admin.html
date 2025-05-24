@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Admin - BAF Express</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="img/logo-baf.png" alt="Logo BAF Express" class="logo" />
+      <h1>BAF Express</h1>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="productos.html"><i class="fas fa-box-open"></i> Productos</a>
+      <a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+      <a href="login.html" id="admin-link"><i class="fas fa-user-cog"></i> Login</a>
+    </nav>
+  </header>
+
+  <main class="admin-panel">
+    <h2>Panel de Administración</h2>
+
+    <section>
+      <h3>Agregar o editar producto</h3>
+      <form id="form-nuevo-producto">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto" required />
+        <input type="number" id="precio" name="precio" placeholder="Precio" required min="0" step="0.01" />
+        <input type="number" id="stock" name="stock" placeholder="Stock" required min="0" step="1" />
+        <input type="text" id="imagen" name="imagen" placeholder="URL completa de la imagen (ej. https://ejemplo.com/imagen.jpg)" required />
+        <img id="imagen-preview" alt="Vista previa de la imagen" style="display:none; width:100px; height:auto; border-radius:8px; margin-top:5px;" />
+        <select id="categoria" name="categoria" required style="margin-top: 10px; padding: 10px; font-size: 1em; border-radius: 6px;">
+          <option value="" disabled selected>Selecciona una categoría</option>
+          <option value="frutas">Frutas</option>
+          <option value="cereales">Cereales</option>
+          <option value="lacteos">Lácteos</option>
+          <option value="proteinas">Proteinas</option>
+          <option value="verduras">Verduras</option>
+        </select>
+        <button type="submit" style="margin-top: 15px;">Agregar</button>
+      </form>
+    </section>
+
+    <section>
+      <h3>Listado de productos</h3>
+      <div id="tabla-productos"></div>
+    </section>
+
+    <button id="btn-cerrar-sesion">Cerrar sesión</button>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
