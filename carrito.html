@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito - BAF Express</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<script>
+  const adminLink = document.getElementById("admin-link");
+  if (localStorage.getItem("sesion_admin") !== "activa") {
+    adminLink.style.display = "none";
+  }
+</script>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="img/logo-baf.png" alt="Logo BAF Express" class="logo">
+      <h1>BAF Express</h1>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="productos.html"><i class="fas fa-box-open"></i> Productos</a>
+      <a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+      <a href="login.html" id="admin-link"><i class="fas fa-user-cog"></i> Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="carrito-container" id="carrito-container">
+      <!-- Aquí se insertan los productos del carrito -->
+    </section>
+
+    <div class="total-carrito">
+      <h3>Total: <span id="total-carrito">$0 COP</span></h3>
+      <button onclick="vaciarCarrito()">Vaciar carrito</button>
+      <button id="btn-realizar-compra" onclick="realizarCompra()">Apartar compra</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BAF Express. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const adminLink = document.getElementById("admin-link");
+      if (localStorage.getItem("sesion_admin") !== "activa") {
+        adminLink.style.display = "none";
+      }
+    });
+  </script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>
